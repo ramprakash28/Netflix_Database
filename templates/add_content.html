@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    {% include "header.html" %}
+    <body>
+        <div class="container">
+            <h1>{{ action }} Content</h1>
+            <form method="POST" class="mt-4">
+                {{ form.csrf_token }}
+                {{ form.hidden_tag() }}
+
+                <!-- Content ID (only for Add) -->
+                {% if action == 'Add' %}
+                <div class="mb-3">
+                    {{ form.content_id.label(class="form-label") }} 
+                    {{ form.content_id(class="form-control") }}
+                </div>
+                {% endif %}
+
+                <!-- Title -->
+                <div class="mb-3">
+                    {{ form.title.label(class="form-label") }} 
+                    {{ form.title(class="form-control") }}
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3">
+                    {{ form.description.label(class="form-label") }} 
+                    {{ form.description(class="form-control") }}
+                </div>
+
+                <!-- Release Date -->
+                <div class="mb-3">
+                    {{ form.release_date.label(class="form-label") }} 
+                    {{ form.release_date(class="form-control") }}
+                </div>
+
+                <!-- Duration -->
+                <div class="mb-3">
+                    {{ form.duration.label(class="form-label") }} 
+                    {{ form.duration(class="form-control") }}
+                </div>
+
+                <!-- Content Type Dropdown -->
+                <div class="mb-3">
+                    {{ form.content_type.label(class="form-label") }}
+                    {{ form.content_type(class="form-control") }}
+                </div>
+
+                <!-- Rating -->
+                <div class="mb-3">
+                    {{ form.rating.label(class="form-label") }} 
+                    {{ form.rating(class="form-control") }}
+                </div>
+
+                <!-- Genre -->
+                <div class="mb-3">
+                    {{ form.genre.label(class="form-label") }} 
+                    {{ form.genre(class="form-control") }}
+                </div>
+
+                <!-- User ID -->
+                <div class="mb-3">
+                    {{ form.user_id.label(class="form-label") }} 
+                    {{ form.user_id(class="form-control") }}
+                </div>
+
+                <!-- Movies/TV Shows ID -->
+                <div class="mb-3">
+                    {{ form.movies_tvshows_id.label(class="form-label") }} 
+                    {{ form.movies_tvshows_id(class="form-control") }}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mb-3">
+                    {{ form.submit(class="btn btn-primary") }} 
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

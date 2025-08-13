@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subscription Percentage</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Percentage of Subscription Types</h1>
+    <table border="1">
+        <tr>
+            <th>Subscription Type</th>
+            <th>Total Subscriptions</th>
+            <th>Percentage (%)</th>
+        </tr>
+        {% for row in result %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2]|round(2) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/window_functions">Back to Window Functions</a>
+</body>
+</html>

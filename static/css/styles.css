@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/Logo.jpg"); /* Background image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: right;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    font-family: Arial, sans-serif; /* Sets font family */
+    color: white; /* Default text color */
+}
+
+.button {
+    display: inline-block; /* Makes it behave like a button */
+    padding: 10px 20px; /* Adds spacing inside the button */
+    font-size: 18px; /* Adjusts text size */
+    color: white; /* Text color */
+    background-color: #ff5722; /* Netflix-inspired red */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounds the corners */
+    text-decoration: none; /* Removes underline */
+    text-align: center; /* Centers text */
+    cursor: pointer; /* Adds pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.button:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+    text-decoration: none; /* Ensure no underline appears */
+}
+
+.content-overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for text */
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%; /* Adjust width to make it smaller */
+    margin: 50px 0 50px 50px; /* Align to the left */
+    text-align: left; /* Align text to the left */
+    position: relative; /* Allows precise positioning */
+}
+
+.content-overlay h1 {
+    text-align: center; /* Center-align the heading */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #ff5722; /* Netflix-inspired red color for links */
+    font-size: 18px;
+}
+
+ul li a:hover {
+    color: white; /* Changes link color on hover */
+}
+
+footer {
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+}
+
+ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0; /* Adds spacing between buttons */
+    font-size: 18px;
+    color: white;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: #e64a19;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    {% include "header.html" %}
+    <body>
+        <div class="container">
+            <h1>{{ action }} Profile</h1>
+            <form method="POST" class="mt-4">
+                {{ form.csrf_token }}
+                {{ form.hidden_tag() }}
+
+                <!-- Profile ID (only for Add) -->
+                {% if action == 'Add' %}
+                <div class="mb-3">
+                    {{ form.profile_id.label(class="form-label") }} 
+                    {{ form.profile_id(class="form-control") }}
+                </div>
+                {% endif %}
+
+                <!-- User ID -->
+                <div class="mb-3">
+                    {{ form.user_id.label(class="form-label") }} 
+                    {{ form.user_id(class="form-control") }}
+                </div>
+
+                <!-- Profile Name -->
+                <div class="mb-3">
+                    {{ form.profile_name.label(class="form-label") }} 
+                    {{ form.profile_name(class="form-control") }}
+                </div>
+
+                <!-- Profile Type Dropdown -->
+                <div class="mb-3">
+                    {{ form.profile_type.label(class="form-label") }}
+                    {{ form.profile_type(class="form-control") }}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mb-3">
+                    {{ form.submit(class="btn btn-primary") }} 
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

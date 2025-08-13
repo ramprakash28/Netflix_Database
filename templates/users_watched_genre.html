@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users Who Watched All Content in {{ genre }}</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Users Who Have Watched All Content in the Genre '{{ genre }}'</h1>
+    {% if result %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                <tr>
+                    <td>{{ row[0] }}</td> <!-- User ID -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No users have watched all content in the genre '{{ genre }}'.</p>
+    {% endif %}
+    <a href="/window_functions">Back to Window Functions</a>
+</body>
+</html>

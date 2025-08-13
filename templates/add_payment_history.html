@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    {% include "header.html" %}
+    <body>
+        <div class="container">
+            <h1>{{ action }} Payment History</h1>
+            <form method="POST" class="mt-4">
+                {{ form.csrf_token }}
+                {{ form.hidden_tag() }}
+
+                <!-- History ID (only for Add) -->
+                {% if action == 'Add' %}
+                <div class="mb-3">
+                    {{ form.history_id.label(class="form-label") }} 
+                    {{ form.history_id(class="form-control") }}
+                </div>
+                {% endif %}
+
+                <!-- Start Date -->
+                <div class="mb-3">
+                    {{ form.start_date.label(class="form-label") }} 
+                    {{ form.start_date(class="form-control") }}
+                </div>
+
+                <!-- End Date -->
+                <div class="mb-3">
+                    {{ form.end_date.label(class="form-label") }} 
+                    {{ form.end_date(class="form-control") }}
+                </div>
+
+                <!-- Payment ID -->
+                <div class="mb-3">
+                    {{ form.payment_id.label(class="form-label") }} 
+                    {{ form.payment_id(class="form-control") }}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mb-3">
+                    {{ form.submit(class="btn btn-primary") }} 
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Content Performance: Average Rating and Watch Count</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Content Performance: Average Rating and Watch Count by Genre</h1>
+    {% if result %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Genre</th>
+                    <th>Average Rating</th>
+                    <th>Watch Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                <tr>
+                    <td>{{ row[0] }}</td> <!-- Genre -->
+                    <td>{{ row[1]|round(2) }}</td> <!-- Average Rating -->
+                    <td>{{ row[2] }}</td> <!-- Watch Count -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+    <a href="/window_functions">Back to Window Functions</a>
+</body>
+</html>

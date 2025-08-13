@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    {% include "header.html" %}
+    <body>
+        <div class="container">
+            <h1>{{ action }} Payment</h1>
+            <form method="POST" class="mt-4">
+                {{ form.csrf_token }}
+                {{ form.hidden_tag() }}
+
+                <!-- Payment ID (only for Add) -->
+                {% if action == 'Add' %}
+                <div class="mb-3">
+                    {{ form.payment_id.label(class="form-label") }} 
+                    {{ form.payment_id(class="form-control") }}
+                </div>
+                {% endif %}
+
+                <!-- User ID -->
+                <div class="mb-3">
+                    {{ form.user_id.label(class="form-label") }} 
+                    {{ form.user_id(class="form-control") }}
+                </div>
+
+                <!-- Payment Date -->
+                <div class="mb-3">
+                    {{ form.payment_date.label(class="form-label") }} 
+                    {{ form.payment_date(class="form-control") }}
+                </div>
+
+                <!-- Due Date -->
+                <div class="mb-3">
+                    {{ form.due_date.label(class="form-label") }} 
+                    {{ form.due_date(class="form-control") }}
+                </div>
+
+                <!-- Discount Code -->
+                <div class="mb-3">
+                    {{ form.discount_code.label(class="form-label") }} 
+                    {{ form.discount_code(class="form-control") }}
+                </div>
+
+                <!-- Payment Method Dropdown -->
+                <div class="mb-3">
+                    {{ form.payment_method.label(class="form-label") }} 
+                    {{ form.payment_method(class="form-control") }}
+                </div>
+
+                <!-- Amount Paid -->
+                <div class="mb-3">
+                    {{ form.amount_paid.label(class="form-label") }} 
+                    {{ form.amount_paid(class="form-control") }}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mb-3">
+                    {{ form.submit(class="btn btn-primary") }} 
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

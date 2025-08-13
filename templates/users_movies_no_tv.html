@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users Who Watched Movies But Not TV Shows</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Users Who Watched Movies But Not TV Shows</h1>
+    {% if result %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                <tr>
+                    <td>{{ row[0] }}</td> <!-- User ID -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No users have watched only movies without watching TV shows.</p>
+    {% endif %}
+    <a href="/window_functions">Back to Window Functions</a>
+</body>
+</html>

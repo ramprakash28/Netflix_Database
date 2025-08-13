@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    {% include "header.html" %}
+<body>
+    <h1>User Activity Details</h1>
+    <div class="table-responsive-sm">
+        <table class="table table-sm align-middle table-bordered border-dark table-hover">
+            <thead class="table-primary">
+                <tr>
+                    <th scope="col">Activity ID</th>
+                    <th scope="col">User ID</th>
+                    <th scope="col">Activity Type</th>
+                    <th scope="col">Watch Status</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td scope="col"><a href="{{ url_for('update_user_activity', activity_id=row[0]) }}">update</a></td>
+                    <td scope="col"><a href="{{ url_for('delete_user_activity', activity_id=row[0]) }}">delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <h5 class="d-block text-end mt-2 px-5">
+        <a href="/add_user_activity">Add</a>
+    </h5>
+</body>
+</html>

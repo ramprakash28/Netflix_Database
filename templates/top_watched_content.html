@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top 5 Most Watched Content</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Top 5 Most Watched Content by Users</h1>
+    {% if result %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Content Title</th>
+                    <th>Total Watches</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                <tr>
+                    <td>{{ row[0] }}</td> <!-- Content Title -->
+                    <td>{{ row[1] }}</td> <!-- Total Watches -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+    <a href="/window_functions">Back to Window Functions</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - NeXFlix</title>
+    <!-- Link to Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+
+    <!-- Link to CSS -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Content Overlay -->
+    <div class="content-overlay">
+        <h1>Welcome to the NeXflix Database</h1>
+        <ul>
+            <li><a href="{{ url_for('users') }}">User</a></li>
+            <li><a href="{{ url_for('profiles') }}">Profile</a></li>
+            <li><a href="{{ url_for('subscriptions') }}">Subscription</a></li>
+            <li><a href="{{ url_for('content') }}">Content</a></li>
+            <li><a href="{{ url_for('episode') }}">Episode</a></li>
+            <li><a href="{{ url_for('user_activity') }}">User Activity</a></li>
+            <li><a href="{{ url_for('payment') }}">Payment</a></li>
+            <li><a href="{{ url_for('payment_history') }}">Payment History</a></li>
+            <li><a href="{{ url_for('cast') }}">Cast</a></li>
+            <li>
+                <a href="{{ url_for('window_functions') }}" class="button">Window Functions</a>
+            </li>            
+        </ul>
+    </div>
+</body>
+</html>

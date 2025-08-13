@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First and Last Payment Dates</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>First and Last Payment Dates Per User</h1>
+    {% if result %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>First Payment</th>
+                    <th>Last Payment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                <tr>
+                    <td>{{ row[0] }}</td> <!-- Username -->
+                    <td>{{ row[1] }}</td> <!-- First Payment -->
+                    <td>{{ row[2] }}</td> <!-- Last Payment -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+    <a href="/window_functions">Back to Window Functions</a>
+</body>
+</html>

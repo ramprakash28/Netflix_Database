@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    {% include "header.html" %}
+<body>
+    <h1>Content Details</h1>
+    <div class="table-responsive-sm">
+        <table class="table table-sm align-middle table-bordered border-dark table-hover">
+            <thead class="table-primary">
+                <tr>
+                    <th scope="col">Content ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Release Date</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Content Type</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">User ID</th>
+                    <th scope="col">Movies/TV Shows ID</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[7] }}</td>
+                    <td>{{ row[8] }}</td>
+                    <td>{{ row[9] }}</td>
+                    <td scope="col"><a href="{{ url_for('update_content', content_id=row[0]) }}">update</a></td>
+                    <td scope="col"><a href="{{ url_for('delete_content', content_id=row[0]) }}">delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <h5 class="d-block text-end mt-2 px-5">
+        <a href="/add_content">Add</a>
+    </h5>
+</body>
+</html>

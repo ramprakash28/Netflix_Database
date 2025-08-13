@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    {% include "header.html" %}
+    <body>
+        <div class="container">
+            <h1>{{ action }} Cast</h1>
+            <form method="POST" class="mt-4">
+                {{ form.csrf_token }}
+                {{ form.hidden_tag() }}
+
+                <!-- Cast ID (only for Add) -->
+                {% if action == 'Add' %}
+                <div class="mb-3">
+                    {{ form.cast_id.label(class="form-label") }} 
+                    {{ form.cast_id(class="form-control") }}
+                </div>
+                {% endif %}
+
+                <!-- Director Name -->
+                <div class="mb-3">
+                    {{ form.director_name.label(class="form-label") }} 
+                    {{ form.director_name(class="form-control") }}
+                </div>
+
+                <!-- Actor Name -->
+                <div class="mb-3">
+                    {{ form.actor_name.label(class="form-label") }} 
+                    {{ form.actor_name(class="form-control") }}
+                </div>
+
+                <!-- Actress Name -->
+                <div class="mb-3">
+                    {{ form.actress_name.label(class="form-label") }} 
+                    {{ form.actress_name(class="form-control") }}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mb-3">
+                    {{ form.submit(class="btn btn-primary") }} 
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

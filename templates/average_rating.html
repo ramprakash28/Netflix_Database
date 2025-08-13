@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Average Rating by Content Type</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Average Rating by Content Type</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Content Type</th>
+                <th>Average Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in result %}
+            <tr>
+                <td>{{ row[0] }}</td> <!-- Access 'content_type' -->
+                <td>{{ row[1]|round(2) }}</td> <!-- Access 'average_rating', rounded to 2 decimals -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/window_functions">Back to Window Functions</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cumulative Content Count</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Cumulative Content Count Over Time</h1>
+    {% if result %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Release Date</th>
+                    <th>Content Count</th>
+                    <th>Cumulative Content</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                <tr>
+                    <td>{{ row[0] }}</td> <!-- Release Date -->
+                    <td>{{ row[1] }}</td> <!-- Content Count -->
+                    <td>{{ row[2] }}</td> <!-- Cumulative Content -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+    <a href="/window_functions">Back to Window Functions</a>
+</body>
+</html>

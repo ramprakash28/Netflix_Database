@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subscriptions That Never Watched Any Content</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Subscriptions That Never Watched Any Content</h1>
+    {% if result %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Subscription ID</th>
+                    <th>User ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                <tr>
+                    <td>{{ row[0] }}</td> <!-- Subscription ID -->
+                    <td>{{ row[1] }}</td> <!-- User ID -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>All subscriptions have watched at least one piece of content.</p>
+    {% endif %}
+    <a href="/window_functions">Back to Window Functions</a>
+</body>
+</html>

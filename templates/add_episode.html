@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    {% include "header.html" %}
+    <body>
+        <div class="container">
+            <h1>{{ action }} Episode</h1>
+            <form method="POST" class="mt-4">
+                {{ form.csrf_token }}
+                {{ form.hidden_tag() }}
+
+                <!-- Episode ID (only for Add) -->
+                {% if action == 'Add' %}
+                <div class="mb-3">
+                    {{ form.episode_id.label(class="form-label") }} 
+                    {{ form.episode_id(class="form-control") }}
+                </div>
+                {% endif %}
+
+                <!-- Episode Number -->
+                <div class="mb-3">
+                    {{ form.episode_number.label(class="form-label") }} 
+                    {{ form.episode_number(class="form-control") }}
+                </div>
+
+                <!-- Season Number -->
+                <div class="mb-3">
+                    {{ form.season_number.label(class="form-label") }} 
+                    {{ form.season_number(class="form-control") }}
+                </div>
+
+                <!-- Episode Title -->
+                <div class="mb-3">
+                    {{ form.episode_title.label(class="form-label") }} 
+                    {{ form.episode_title(class="form-control") }}
+                </div>
+
+                <!-- Episode Duration -->
+                <div class="mb-3">
+                    {{ form.episode_duration.label(class="form-label") }} 
+                    {{ form.episode_duration(class="form-control") }}
+                </div>
+
+                <!-- Movies/TV Shows ID -->
+                <div class="mb-3">
+                    {{ form.movies_tvshows_id.label(class="form-label") }} 
+                    {{ form.movies_tvshows_id(class="form-control") }}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mb-3">
+                    {{ form.submit(class="btn btn-primary") }} 
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

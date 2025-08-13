@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Operations: Users with the Same Signup Date</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Set Operations: Users with the Same Signup Date</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User 1</th>
+                <th>User 2</th>
+                <th>Signup Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in result %}
+            <tr>
+                <td>{{ row[0] }}</td> <!-- User 1 -->
+                <td>{{ row[1] }}</td> <!-- User 2 -->
+                <td>{{ row[2] }}</td> <!-- Signup Date -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/window_functions">Back to Window Functions</a>
+</body>
+</html>
