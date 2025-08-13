@@ -114,11 +114,6 @@ Frontend: HTML, Jinja2 Templates, Bootstrap
 Database: MySQL
 Libraries: Flask-WTF, MySQL Connector, Jinja2
 
-## Project Demo
-Watch the full demo of the project on Loom: 
-[Loom Video Demo]: https://www.loom.com/share/223f6cd0ad3d4665bfcc2d9b0f8655af
-
-
 ## Troubleshooting
 
 ### ImportError: No module named 'mysql.connector'
